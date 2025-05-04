@@ -72,27 +72,36 @@ This project aims to create a virtual Active Directory Domain environment using 
 
 ## ⚙️ Server Setup and Domain Controller Configuration
 1. Created a virtual machine in **VirtualBox** using the **Windows Server 2022 ISO**.
+   ![Alt text](images/server.png)
 2. Assigned a **static IP address** to the server.
+   ![Alt text](images/image1.png)
 3. From **Server Manager**:
    - Navigated to **Manage > Add Roles and Features**.
    - Installed the **Active Directory Domain Services (AD DS)** role.
+   - ![Alt text](images/image3.png)
    - Promoted the server to a **Domain Controller**.
 4. Created a new forest and domain: **kaanlab.local**.
+   ![Alt text](images/image4.png)
 5. Completed setup with default options and defined the **DSRM password**.
+   ![Alt text](images/image5.png)
 6. **DNS configuration** was automatically handled (Forward Lookup Zone).
 7. Manually created a **Reverse Lookup Zone** using the server IP address.
 8. Installed the **DHCP Server** role and created a new **IPv4 Scope** for IP distribution.
+   ![Alt text](images/image6.png)
+   ![Alt text](images/image7.png)
 
 ---
 
 ## 🧩 Joining the Client Machine to the Domain
 1. Created a second VM using **Windows 10** on the same virtual network.
-2. Verified network settings with `ipconfig /all`, ensuring correct **DNS** and **DHCP** configurations.
-3. Pinged the server to confirm network connectivity.
-4. Joined the domain **kaanlab.local** via:
+   ![Alt text](images/client.png)
+3. Verified network settings with `ipconfig /all`, ensuring correct **DNS** and **DHCP** configurations.
+4. Pinged the server to confirm network connectivity.
+5. Joined the domain **kaanlab.local** via:
    - **This PC > System Properties > Domain**.
    - Entered **domain administrator credentials**.
-5. Successfully logged into the client machine using a domain account.
+6. Successfully logged into the client machine using a domain account.
+  ![Alt text](images/client2.png)
 
 ---
 
@@ -100,6 +109,7 @@ This project aims to create a virtual Active Directory Domain environment using 
 1. Created a new group (e.g., **IT_Department**) within the domain structure.
 2. Created a new user (e.g., **kaan.uzun**) and assigned them to the group.
 3. Logged into the domain-joined client using the new user credentials.
+   ![Alt text](images/dep.png)
 
 ---
 
@@ -109,6 +119,8 @@ This project aims to create a virtual Active Directory Domain environment using 
 3. Configured a sample **wallpaper policy** under **User Configuration** settings.
 4. Applied the policy and updated the client using `gpupdate /force`.
 5. Verified successful policy enforcement on the client machine.
+   ![Alt text](images/policy.png)
+   ![Alt text](images/wallpaper_policy.png)
 
 ---
 
