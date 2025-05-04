@@ -114,6 +114,52 @@ This project aims to create a virtual Active Directory Domain environment using 
 ---
 
 ## 🛡️ Group Policy Management
+
+## Group Policy Management
+
+The **Group Policy Management Console (GPMC)** was utilized to create a new **Group Policy Object (GPO)** linked to the domain.
+
+As a demonstration, a **desktop wallpaper policy** was configured and applied to users.
+
+The policy was enforced on the client machine using the `gpupdate /force` command, with successful validation of functionality.
+
+---
+
+### 👥 Computer vs. User Configuration
+
+Group Policy settings are categorized into two primary types:
+
+#### **Computer Configuration**
+- Policies applied at the machine level, activated during computer startup.
+- Independent of the logged-in user.
+- Examples:
+  - Startup scripts
+  - Security settings
+  - Software installations
+  - Firewall rules
+
+#### **User Configuration**
+- Policies applied when a specific user logs in, regardless of the machine.
+- Examples:
+  - Desktop wallpaper
+  - Login scripts
+  - Software restrictions tailored to user identity
+
+---
+
+### 🧩 Other Policy Examples
+
+While the wallpaper policy served as a simple example in this project, **Group Policy Objects** support a wide array of configurations commonly used in enterprise environments, including:
+
+- **Software Restriction Policies**: Prevent users from running unauthorized applications.
+- **Software Deployment**: Automatically install software on client machines via GPO.
+- **Password Policies**: Enforce minimum length, complexity, and rotation requirements.
+- **Logon Scripts**: Execute scripts at user logon to map network drives or printers.
+- **USB Device Restrictions**: Restrict access to removable storage for enhanced security.
+- **Windows Update Management**: Centrally manage update schedules and configurations.
+
+For the illustration:
+
 1. Opened the **Group Policy Management Console**.
 2. Created a new **Group Policy Object (GPO)** and linked it to the domain.
 3. Configured a sample **wallpaper policy** under **User Configuration** settings.
