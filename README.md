@@ -121,7 +121,7 @@ This project aims to create a virtual Active Directory Domain environment using 
 5. Verified successful policy enforcement on the client machine.
    ![Alt text](images/policy.png)
    ![Alt text](images/wallpaper_policy.png)
-
+   ![Alt text](wallpaper_policy1.png)
 ---
 
 ## 🚀 Key Takeaways
